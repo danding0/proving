@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./lib/datetimepicker/jquery.datetimepicker.css">
+  <link rel="stylesheet" href="https://innsta.b0.upaiyun.com/css_v2/inn.css">
+  <link rel="stylesheet" href="https://innsta.b0.upaiyun.com/css_v2/page/sign.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/info.css">
+<style lang="">
+  .ui.dropdown .menu.show {
+    display: block;
+  }
+  .xdsoft_datetimepicker .xdsoft_timepicker.active {
+    display: none;
+  }
+  .textarea_content_div {
+    margin-bottom: 30px;
+  }
+</style>
+  <title>个人履历</title>
+</head>
+<body>
+  <!-- 进程 -->
+    <div class="inn-sign-process">
+        <ul class="clearfix">
+          <li class="active">
+            <div class="icon"></div>
+            <div class="text">填写工作信息</div>
+          </li>
+          <li class="active">
+            <div class="icon"></div>
+            <div class="text">完善个人履历</div>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <div class="text">添加技能和作品</div>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <div class="text">实名认证</div>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <div class="text">申请成功</div>
+          </li>
+        </ul>
+      </div>
+  <!-- 个人履历 -->
+  <div class="main inn-sign proginn-resume">
+      <div id="J_Loading"></div>
+      <div class="ui form">
+        <form action="" id="resumecontentform" method="post">
+          <h4 class="ui header">职业状态</h4>
+          <div id="J_WorkState">
+            <!-- 工作状态 -->
+            <div class="ui dropdown selection dropdown_status">
+              <input type="hidden" id="status" name="status" value="">
+              <i class="dropdown icon"></i>
+              <div class="text default status_text">请选择工作状态</div>
+              <div class="menu_work menu">
+                <div class="item" data-value="1">求职</div>
+                <div class="item" data-value="2">自由工作</div>
+                <div class="item" data-value="3">正常工作</div>
+              </div>
+            </div>
+           <!-- 职业方向 -->
+            <div class="ui selection dropdown dropdown_occupation">
+              <input id="occupation" name="occupation" type="hidden" value="">
+              <div class="default text occupation_text">
+                请选择职业方向 </div>
+              <i class="dropdown icon"></i>
+              <div class="menu menu_occupation">
+                <div class="item occupation_list" data-value="1">后端工程师</div>
+                <div class="item occupation_list" data-value="2">移动端工程师</div>
+                <div class="item occupation_list" data-value="3">前端工程师</div>
+                <div class="item occupation_list" data-value="4">DBA工程师</div>
+                <div class="item occupation_list" data-value="5">设计师</div>
+                <div class="item occupation_list" data-value="6">产品经理</div>
+                <div class="item occupation_list" data-value="7">其他</div>
+                <div class="item occupation_list" data-value="8">测试</div>
+                <div class="item occupation_list" data-value="9">运维工程师</div>
+                <div class="item occupation_list" data-value="10">游戏工程师</div>
+                <div class="item occupation_list" data-value="11">小程序</div>
+              </div>
+            </div>
+            <!-- 具体职业 -->
+            <div class="ui selection dropdown dropdown_direction">
+              <input id="direction" name="direction" type="hidden" value="">
+              <div class="default text direction_text">
+                请选择具体职业 </div>
+              <i class="dropdown icon"></i>
+              <div class="menu menu_direction">
+                <div class="item" data-value="1">Java</div>
+                <div class="item" data-value="2">C++</div>
+                <div class="item" data-value="3">PHP</div>
+                <div class="item" data-value="4">C</div>
+                <div class="item" data-value="5">C#</div>
+                <div class="item" data-value="8">Python</div>
+                <div class="item" data-value="12">Ruby</div>
+                <div class="item" data-value="13">Node.js</div>
+                <div class="item" data-value="16">Android</div>
+                <div class="item" data-value="17">iOS</div>
+                <div class="item" data-value="19">前端工程师</div>
+                <div class="item" data-value="30">UI设计师</div>
+                <div class="item" data-value="36">产品经理</div>
+                <div class="item" data-value="37">项目经理</div>
+                <div class="item" data-value="38">产品其它</div>
+                <div class="item" data-value="43">运营</div>
+                <div class="item" data-value="47">HR</div>
+                <div class="item" data-value="48">架构师</div>
+                <div class="item" data-value="49">CTO</div>
+                <div class="item" data-value="51">创始人</div>
+                <div class="item" data-value="52">合伙人</div>
+                <div class="item" data-value="53">全栈</div>
+                <div class="item" data-value="54">UE设计师</div>
+                <div class="item" data-value="60">Go</div>
+                <div class="item" data-value="63">后端其他</div>
+                <div class="item" data-value="64">移动其他</div>
+                <div class="item" data-value="66">测试工程师</div>
+                <div class="item" data-value="77">运维工程师</div>
+                <div class="item" data-value="94">DBA工程师</div>
+                <div class="item" data-value="95">设计其它</div>
+                <div class="item" data-value="33">原画师</div>
+                <div class="item" data-value="105">Unity3D</div>
+                <div class="item" data-value="106">cocos2d-x</div>
+                <div class="item" data-value="107">游戏其它</div>
+                <div class="item" data-value="108">小程序</div>
+              </div>
+            </div>
+          </div>
+          <!-- 工作经历 -->
+          <h4 class="ui header">工作经历</h4>
+          <div class="J_ResumeFields">
+            <div class="J_item mb20">
+              <div class="fields">
+                <input class="J_WorkId" type="hidden" value="">
+                <div class="inline field">
+                  <input type="text" class="fm-input J_StartTime" placeholder="请选择开始时间" value="" id="datetimepicker2">
+                 
+                </div>
+                <div class="inline field">
+                  <input type="text" class="fm-input J_EndTime" placeholder="请选择结束时间" value="" id="datetimepicker21">
+                </div>
+                <div class="inline field fm-input">
+                    <div class="selectize-input items not-full">
+                      <input type="text" autocomplete="off" placeholder="请输入公司名称" >
+                    </div>
+                </div>
+                <div class="inline field fm-input">
+                  <div class="selectize-control J_Title single">
+                    <div class="selectize-input items not-full">
+                      <input type="text" autocomplete="off" placeholder="请输入职位">
+                    </div>
+                  </div>
+                </div>
+                <i class="plus icon link fm-icon J_AddResume" title="添加更多经历"></i>
+                <i class="trash icon link fm-icon" data-role="delete" title="删除"></i>
+              </div>
+              <div class="row">
+                <textarea class="fm-info J_Desc" placeholder="请简单说明您的工作内容，关键成绩(140字以内)" maxlength="140"></textarea>
+              </div>
+              <div class="row" style="color: #258fe7;margin-top: 10px;">
+                <label>
+                  <input name="is_main" type="radio">&nbsp;&nbsp;在个人主页优先展示该项经历</label>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- 教育经历 -->
+          <h4 class="ui header">教育经历</h4>
+          <div class="J_EduFields">
+            <div class="J_EduItem edu-item mb20">
+              <div class="fields">
+                <input class="J_WorkId" type="hidden" value="">
+                <div class="inline field">
+                  <input type="text" class="fm-input J_StartTime" placeholder="请选择开始时间" value="" id="datetimepicker22">
+                </div>
+                <div class="inline field">
+                <input type="text" class="fm-input J_EndTime" placeholder="请选择结束时间" value="" id="datetimepicker23">
+                </div>
+                <div class="inline field fm-input">
+                  
+                  <div class="selectize-control J_School single">
+                    <div class="selectize-input items not-full">
+                      <input type="text" autocomplete="off" tabindex="" placeholder="请输入院校名称">
+                    </div>
+                  </div>
+                </div>
+                <div class="inline field fm-input">
+                  <div class="selectize-control J_Major single">
+                    <div class="selectize-input items not-full">
+                      <input type="text" autocomplete="off" tabindex="" placeholder="请输入专业名称">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inline field fm-input">
+                  <select name="title" class="J_Degree selectized">
+                    <option value="" selected="selected">请选择学历</option>
+                    <option value="">初中</option>
+                    <option value="">高中</option>
+                    <option value="">大专</option>
+                    <option value="">本科</option>
+                    <option value="">研究生</option>
+                    <option value="">博士</option>
+                  </select>
+                  <!-- <div class="selectize-control J_Degree single">
+                    <div class="selectize-input items not-full">
+                      <input type="hidden" autocomplete="off" tabindex="" placeholder="请输入学历">
+                    </div>
+                  </div> -->
+                </div>
+                <i class="plus icon link fm-icon J_Add" title="添加更多经历"></i>
+                <i class="trash icon link fm-icon" data-role="delete" title="删除"></i>
+
+              </div>
+              <div class="row">
+                <textarea class="fm-info J_Desc" placeholder="请说明您的成就，如获奖经历、实践经历(140字以内)" maxlength="140"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- 个人介绍 -->
+          <h4 class="ui header">个人介绍
+            <span class="meta">（选填）</span>
+          </h4>
+          <div class="field">
+            <div class="textarea_content_div">
+              <div class="richText">
+                  <!-- 富文本编辑器 -->
+              </div>
+              <input id="resume_submit_btn" style="display:none" type="submit" value="ok">
+            </div>
+          </div>
+        </form>
+        <div class="field">
+          <a href="./skill.html" id="resume_submit_btn_a" class="ui button blue" data-href="./skill.html">下一步</a>
+          <a href="./info.html" class="ui button">返回</a>
+        </div>
+      </div>
+    </div>
+<script src="./js/jquery-1.11.3.js"></script>
+<script src="./lib/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+<script src="./lib/wangEditor/wangEditor.js"></script>
+<script src="./js/resume.js"></script>
+<script src="./js/time.js"></script>
+</body>
+</html>

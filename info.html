@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>个人简介</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="noindex,follow" />
+  <link rel="stylesheet" href="./css/info.css">
+  <link rel="stylesheet" href="./lib/datetimepicker/jquery.datetimepicker.css">
+  <style>
+    .ui.form select {
+       display: inline;
+       width: 30%;
+    }
+    .xdsoft_datetimepicker .xdsoft_datepicker.active {
+      display: none;
+    }
+  </style>
+</head>
+<body class="">
+  <!-- 进程 -->
+  <div class="inn-sign-process">
+    
+    <ul class="clearfix">
+      <li class="active">
+        <div class="icon"></div>
+        <div class="text">填写工作信息</div>
+      </li>
+      <li>
+        <div class="icon"></div>
+        <div class="text">完善个人履历</div>
+      </li>
+      <li>
+        <div class="icon"></div>
+        <div class="text">添加技能和作品</div>
+      </li>
+      <li>
+        <div class="icon"></div>
+        <div class="text">实名认证</div>
+      </li>
+      <li>
+        <div class="icon"></div>
+        <div class="text">申请成功</div>
+      </li>
+    </ul>
+
+  </div>
+  <!-- 个人信息 -->
+
+  <div class="main inn-sign inn-work">
+    <div id="J_Loading"></div>
+    <form id="J_WorkForm" method="post">
+      <div class="ui form">
+        <!-- 可工作时间 -->
+        <div class="field">
+          <div class="field-text">可工作时间</div>
+          <div class="field-wrap">
+            <ul class="choose-time">
+              <li class="clearfix J_SelectTime" data-type="workday">
+                <div class="ui checkbox">
+                  <input type="checkbox" class="hidden">
+                  <label>工作日</label>
+                </div>
+                <div class="time-item">
+                  <input class="J_WorkTime start datetimepicker1" type="text" placeholder="开始时间" value="" id="datetimepicker1">
+                  <input class="J_WorkTime end datetimepicker1" type="text" placeholder="结束时间" value="" id="datetimepicker1">
+                </div>
+              </li>
+              <li class="clearfix J_SelectTime" data-type="weekend">
+                <div class="ui checkbox">
+                  <input type="checkbox" class="hidden">
+                  <label>周末</label>
+                </div>
+                <div class="time-item">
+                  <input class="J_WorkTime start datetimepicker1" type="text" placeholder="开始时间" value="" id="datetimepicker1">
+                  <input class="J_WorkTime end datetimepicker1" type="text" placeholder="结束时间" value="" id="datetimepicker1">
+                </div>
+              </li>
+            </ul>
+            <input type="hidden" name="work_time_op" class="J_WorkTimeVal" value="">
+          </div>
+        </div>
+        <!-- 所在地区 -->
+        <div class="field">
+          <div class="field-text">所在地区</div>
+            <div class="field-wrap location_city">
+              <select name="" id=""></select>
+              <select name="" id=""></select>
+              <select name="" id=""></select>
+            </div>
+        </div>
+        <!-- 可工作区域 -->
+        <div class="field">
+          <div class="field-text">可工作区域</div>
+          <div class="field-wrap">
+            <div id="J_Remote" class="remote-items">
+              <div class="ui checkbox">
+                <input name="work_remote" value="1" type="checkbox" checked class="hidden">
+                <label>远程工作</label>
+              </div>
+              <div class="ui checkbox">
+                <input name="work_area" value="1" type="checkbox" class="hidden click_disabled">
+                <label>驻场工作</label>
+              </div>
+            </div>
+            <div>
+              <div class="ui selection J_Province work_city">
+                <select name="" id="" disabled></select>
+                <select name="" id="" disabled></select>
+                <select name="" id="" disabled></select>
+              </div>
+              <span class="meta">（可驻场地点）</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field field-action">
+          <a href="./resume.html" class="ui button blue" type="button" id="J_WorkSubmit" data-href="/sign/resume">下一步</a>
+          <!-- <button type="button" class="ui button blue" type="button" id="J_WorkSubmit" data-href="/sign/resume">下一步 -->
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<script src="./js/jquery-1.11.3.js"></script>
+<script src="./lib/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+<script src="./lib/city/distpicker.data.js"></script>
+<script src="./lib/city/distpicker.js"></script>
+<script src="./js/time.js"></script>
+
+<script>
+  $(function () {
+    // 时间选择
+    $('.datetimepicker1').datetimepicker({
+        format: 'H:i', // 时间格式
+        step: 30, // 时间间隔 ; 
+        language: 'zh-CN',
+        validateOnBlur: true
+    })
+    // 省级联动
+    $('.work_city').distpicker();
+     $('.location_city').distpicker();
+     
+    // 禁用省份选择
+    $('.click_disabled').on('click', function () {
+      if($(this).prop("checked")==true){
+          $('.work_city select').attr('disabled',false)
+        }
+    })
+  })
+</script>
+</body>
+
+</html>
+
+

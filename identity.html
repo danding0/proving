@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/info.css">
+    <link rel="stylesheet" href="https://innsta.b0.upaiyun.com/css_v2/inn.css">
+    <title>身份验证</title>
+</head>
+
+<body>
+    <!-- 进程 -->
+    <div class="inn-sign-process">
+            <ul class="clearfix">
+              <li class="active">
+                <div class="icon"></div>
+                <div class="text">填写工作信息</div>
+              </li>
+              <li class="active">
+                <div class="icon"></div>
+                <div class="text">完善个人履历</div>
+              </li>
+              <li class="active">
+                <div class="icon"></div>
+                <div class="text">添加技能和作品</div>
+              </li>
+              <li class="active">
+                <div class="icon"></div>
+                <div class="text">实名认证</div>
+              </li>
+              <li>
+                <div class="icon"></div>
+                <div class="text">申请成功</div>
+              </li>
+            </ul>
+          </div>
+    <div class="main inn-sign inn-sign-id proginn-resume">
+        <div id="J_Loading"></div>
+        <div class="ui form">
+            <form action="/setting" method="post" id="real_settingform">
+                <div class="inline field">
+                    <label>姓名</label>
+                    <input id="realname" type="text" name="realname" value="" placeholder="真实姓名">
+                </div>
+                <div class="inline field">
+                    <label>身份证</label>
+                    <input type="text" name="id_card_no" value="">
+                </div>
+                <div class="inline field">
+                    <div class="clearfix" style="margin: 10px 0 50px 62px;">
+                        <div class="inn-upload inn-upload-style1 card-front" style="float:left;" id="upload1" data-thumbnail="">
+                            <div class="image-uploader">
+                                <div class="image-uploader-preview" data-role="preview"> </div>
+                                <div class="image-uploader-button webuploader-container" data-role="picker">
+                                    <div class="webuploader-pick">选择文件</div>
+                                    <div id="rt_rt_1c2r1fosu6mb1jod11g54fq18au1" style="position: absolute; top: 0px; left: 0px; width: 150px; height: 100px; overflow: hidden; bottom: auto; right: auto;">
+                                        <input type="file" capture="camera" name="file" class="webuploader-element-invisible"
+                                            accept="image/png,image/jpeg,image/jpg">
+                                        <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inn-upload inn-upload-style1 card-back" style="float:left;margin-left: 20px;" id="upload2" data-thumbnail="">
+                            <div class="image-uploader">
+                                <div class="image-uploader-preview" data-role="preview"> </div>
+                                <div class="image-uploader-button webuploader-container" data-role="picker">
+                                    <div class="webuploader-pick">选择文件</div>
+                                    <div id="rt_rt_1c2r1fot1icp1ude16l91eu6j364" style="position: absolute; top: 0px; left: 0px; width: 150px; height: 100px; overflow: hidden; bottom: auto; right: auto;">
+                                        <input type="file" capture="camera" name="file" class="webuploader-element-invisible"
+                                            accept="image/png,image/jpeg,image/jpg">
+                                        <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline field">
+                    <label>支付宝</label>
+                    <input type="text" name="alipay" value="">
+                </div>
+                <div style="margin: -15px 0 10px 62px;font-size: 12px;color:#dfa800">
+                    如果使用手机号为支付宝账号，请确保已在支付宝开启手机登陆。
+                </div>
+                <div class="inline field">
+                    <label>手机</label>
+                    <a class="ui button blue small J_VerifyMobile" href="javascript:;" rel="nofollow" style="width: 154px;" data-mobile-pre-arr="[&quot;\u4e2d\u56fd +86&quot;,&quot;\u4e2d\u56fd\u9999\u6e2f +852&quot;,&quot;\u4e2d\u56fd\u6fb3\u95e8 +853&quot;,&quot;\u4e2d\u56fd\u53f0\u6e7e +886&quot;,&quot;\u82f1\u56fd +44&quot;,&quot;\u7f8e\u56fd +1&quot;,&quot;\u52a0\u62ff\u5927 +1&quot;,&quot;\u65b0\u52a0\u5761 +65&quot;,&quot;\u6fb3\u5927\u5229\u4e9a +61&quot;,&quot;\u5fb7\u56fd +49&quot;,&quot;\u65e5\u672c +81&quot;,&quot;\u97e9\u56fd +82&quot;,&quot;\u4fc4\u7f57\u65af +7&quot;,&quot;\u6cd5\u56fd +33&quot;,&quot;\u5df4\u57fa\u65af\u5766 +92&quot;,&quot;\u5df4\u62ff\u9a6c +507&quot;,&quot;\u5df4\u897f +55&quot;,&quot;\u6bd4\u5229\u65f6 +32&quot;,&quot;\u4e39\u9ea6 +45&quot;,&quot;\u65b0\u897f\u5170 +64&quot;,&quot;\u610f\u5927\u5229 +39&quot;,&quot;\u82ac\u5170 +358&quot;,&quot;\u53e4\u5df4 +53&quot;,&quot;\u8377\u5170 +31&quot;,&quot;\u963f\u6839\u5ef7 +54&quot;,&quot;\u7231\u5c14\u5170 +353&quot;,&quot;\u8001\u631d +856&quot;,&quot;\u5362\u68ee\u5821 +352&quot;,&quot;\u9a6c\u6765\u897f\u4e9a +60&quot;,&quot;\u8499\u53e4 +976&quot;,&quot;\u6469\u7eb3\u54e5 +377&quot;,&quot;\u58a8\u897f\u54e5 +52&quot;,&quot;\u6469\u6d1b\u54e5 +212&quot;,&quot;\u5c3c\u6cca\u5c14 +977&quot;,&quot;\u745e\u58eb +41&quot;,&quot;\u897f\u73ed\u7259 +34&quot;,&quot;\u6c99\u7279\u963f\u62c9\u4f2f +966&quot;,&quot;\u65af\u91cc\u5170\u5361 +94&quot;,&quot;\u6cf0\u56fd +66&quot;,&quot;\u571f\u8033\u5176 +90&quot;,&quot;\u59d4\u5185\u745e\u62c9 +58&quot;,&quot;\u4e4c\u514b\u5170 +380&quot;,&quot;\u5e0c\u814a +30&quot;,&quot;\u4f0a\u6717 +98&quot;,&quot;\u5370\u5ea6 +91&quot;,&quot;\u5370\u5ea6\u5c3c\u897f\u4e9a +62&quot;,&quot;\u8d8a\u5357 +84&quot;]">去验证手机号</a>
+                </div>
+                <div class="inline field">
+                    <label>邮箱</label>
+                    <input type="text" id="email" name="email" value="11231852@qq.com">
+                </div>
+                <div class="inline field">
+                    <label>微信</label>
+                    <input id="weixin" type="text" name="weixin" value="">
+                </div>
+                <div class="inline field clearfix">
+                    <label style="float: left;">工作证明</label>
+                    <div class="inn-upload inn-upload-style1" id="upload3" data-thumbnail="" style="float: left;margin-left: 5px;">
+                        <div class="image-uploader">
+                            <div class="image-uploader-preview" data-role="preview"> </div>
+                            <div class="image-uploader-button webuploader-container" data-role="picker">
+                                <div class="webuploader-pick">选择文件</div>
+                                <div id="rt_rt_1c2r1fot3361eb71nu61brloiu7" style="position: absolute; top: 0px; left: 0px; width: 150px; height: 100px; overflow: hidden; bottom: auto; right: auto;">
+                                    <input type="file" capture="camera" name="file" class="webuploader-element-invisible" accept="image/png,image/jpeg,image/jpg">
+                                    <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: #999;margin: -15px 0 40px 62px;font-size: 12px;">
+                    *请至少提供一份目前工作的证明（个人名片、在职证明、工牌、企业邮箱证明）
+                </p>
+                <div class="field">
+                    <a href="#"></a>
+                    <div id="real_submit" class="ui button blue" style="margin-left: 62px;">立即签约</div>
+                    <a href="./skill.html" class="ui button">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
